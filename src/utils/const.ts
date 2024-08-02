@@ -5,7 +5,7 @@ export const APP_AUTHOR: string = 'Anton Shaposhnikov';
 export const APP_AUTHOR_SIGNATURE: string = 'Today Studio';
 export const APP_AUTHOR_WEBSITE: string = `https://today-studio.ie/`;
 export const APP_AUTHOR_FULL_SIGNATURE: string = `Website Developer: ${APP_AUTHOR} => ${APP_AUTHOR_WEBSITE} => shaposhnikov.web@gmail.com`;
-export const APP_LINK: string = 'https://sfc-fin.com.ua/';
+export const APP_LINK: string = 'https://finrang.in.ua/';
 export const COMPANY_NAME: string[] = ['TOB', 'ФК “ФІН-РАН”'];
 export const COMPANY_FULL_NAME: string = `${COMPANY_NAME[0]} ${COMPANY_NAME[1]}`;
 export const COMPANY_CATCHPHRASE: string =

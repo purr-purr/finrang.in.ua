@@ -1,14 +1,14 @@
-import {FC, useState} from 'react';
+import { FC, useState } from 'react';
 
 import s from './CalcSliders.module.scss';
 import Slider from '@mui/material/Slider';
-import type {ICalcRange} from '@modules/calc/types';
+import type { ICalcRange } from '@modules/calc/types';
 import CalcResult from '@modules/calc/components/CalcResult';
 
 const CalcSliders: FC<{
 	ranges: ICalcRange;
 	isRetirementAge: boolean;
-}> = ({ranges, isRetirementAge}) => {
+}> = ({ ranges, isRetirementAge }) => {
 	const [moneyAmount, setMoneyAmount] = useState<number>(1000);
 	const [duration, setDuration] = useState<number>(1);
 
@@ -61,7 +61,7 @@ const CalcSliders: FC<{
 				</li>
 			</ul>
 
-			<CalcResult moneyAmount={moneyAmount} duration={duration}/>
+			<CalcResult moneyAmount={moneyAmount} duration={duration} />
 		</>
 	);
 };
