@@ -1,8 +1,8 @@
 import s from './SignIn.module.scss';
-import Button from "@modules/common/components/Button";
-import ModalLayout from "@modules/common/components/ModalLayout";
-import {type ChangeEvent, useEffect, useState} from "react";
-import Input from "@modules/common/components/Input";
+import Button from '@modules/common/components/Button';
+import ModalLayout from '@modules/common/components/ModalLayout';
+import { type ChangeEvent, useEffect, useState } from 'react';
+import Input from '@modules/common/components/Input';
 
 type IFormValues = {
 	phone: string;
@@ -15,8 +15,8 @@ const SignIn = () => {
 
 	const initFormValues: IFormValues = {
 		phone: '',
-		password: ''
-	}
+		password: '',
+	};
 	const [formValues, setFormValues] = useState<IFormValues>(initFormValues);
 
 	useEffect(() => {
@@ -25,12 +25,12 @@ const SignIn = () => {
 	}, [isSignInModal]);
 
 	const handleResetClick = () => {
-		setFormValues({phone: '', password: ''});
+		setFormValues({ phone: '', password: '' });
 		!isSubmitError && setIsSubmitError(true);
 	};
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const {name, value} = e.target;
+		const { name, value } = e.target;
 		setFormValues((prevValues) => ({
 			...prevValues,
 			[name]: value,
@@ -38,7 +38,8 @@ const SignIn = () => {
 		isSubmitError && setIsSubmitError(false);
 	};
 
-	const isEmptyForm = formValues.password.length < 1 || formValues.phone.length < 1;
+	const isEmptyForm =
+		formValues.password.length < 1 || formValues.phone.length < 1;
 
 	return (
 		<>
@@ -54,8 +55,9 @@ const SignIn = () => {
 				isOpen={isSignInModal}
 				onClose={() => setIsSignInModal(false)}
 			>
-				<h3 className={s.title}>Будь ласка, введіть ваші облікові дані для
-					входу</h3>
+				<h3 className={s.title}>
+					Будь ласка, введіть ваші облікові дані для входу
+				</h3>
 
 				<Input
 					name="phone"
@@ -76,8 +78,9 @@ const SignIn = () => {
 					minLength={8}
 				/>
 
-				<p
-					className={s.errorMessage}>{isSubmitError && 'Невірний Номер телефону або Пароль'}</p>
+				<p className={s.errorMessage}>
+					{isSubmitError && 'Невірний Номер телефону або Пароль'}
+				</p>
 
 				<Button
 					isDisabled={isEmptyForm}
@@ -88,6 +91,6 @@ const SignIn = () => {
 			</ModalLayout>
 		</>
 	);
-}
+};
 
 export default SignIn;
